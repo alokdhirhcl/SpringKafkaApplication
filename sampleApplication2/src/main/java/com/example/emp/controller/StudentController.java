@@ -19,7 +19,7 @@ import com.example.emp.domain.Student;
 import com.example.emp.domain.User;
 import com.example.emp.service.StudentService;
 import com.example.emp.service.UserService;
-import com.example.emp.service.Producer;
+
 
 @Controller
 public class StudentController {
@@ -30,8 +30,7 @@ public class StudentController {
      @Autowired
      private UserService userservice;
      
-     @Autowired
-		Producer producer;
+    
      
         @GetMapping("/index")
         public String viewHomePage(Model model) {
@@ -62,7 +61,7 @@ public class StudentController {
         @RequestMapping("/delete/{id}")
         public String deletestudent(@PathVariable(name = "id") int id) {
             service.delete(id);
-            return "redirect:/";
+            return "redirect:/index";
         }
         
         @GetMapping("/producerMsg")
@@ -71,7 +70,7 @@ public class StudentController {
     		//producer.sendMsgToTopic(message);
     		 return "login";
     	}
-        @GetMapping("/Login")
+        @GetMapping("/")
         public String login(Model model) {
         	 model.addAttribute("user", new User());
         	 System.out.print("Login Page.................."); 
