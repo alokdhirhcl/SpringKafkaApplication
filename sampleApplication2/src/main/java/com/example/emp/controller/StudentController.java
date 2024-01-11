@@ -61,7 +61,7 @@ public class StudentController {
         @RequestMapping("/delete/{id}")
         public String deletestudent(@PathVariable(name = "id") int id) {
             service.delete(id);
-            return "redirect:/";
+            return "redirect:/index";
         }
         
         @GetMapping("/producerMsg")
@@ -70,7 +70,7 @@ public class StudentController {
     		//producer.sendMsgToTopic(message);
     		 return "login";
     	}
-        @GetMapping("/Login")
+        @GetMapping("/")
         public String login(Model model) {
         	 model.addAttribute("user", new User());
         	 System.out.print("Login Page.................."); 
