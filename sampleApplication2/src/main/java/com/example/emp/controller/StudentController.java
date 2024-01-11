@@ -19,7 +19,7 @@ import com.example.emp.domain.Student;
 import com.example.emp.domain.User;
 import com.example.emp.service.StudentService;
 import com.example.emp.service.UserService;
-import com.example.emp.service.Producer;
+
 
 @Controller
 public class StudentController {
@@ -30,8 +30,7 @@ public class StudentController {
      @Autowired
      private UserService userservice;
      
-     @Autowired
-		Producer producer;
+    
      
         @GetMapping("/index")
         public String viewHomePage(Model model) {
